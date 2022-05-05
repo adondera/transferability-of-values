@@ -1,5 +1,12 @@
 import argparse
 import warnings
+import os
+from transformers.utils import logging
+
+warnings.filterwarnings("ignore")
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+logging.set_verbosity_error()
+
 from nlp.transferability.bert_transferability import evaluate_bert
 from nlp.transferability.lstm_transferability import evaluate_LSTM
 from nlp.transferability.fasttext_transferability import evaluate_fasttext
